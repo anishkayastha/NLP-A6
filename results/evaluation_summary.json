@@ -1,0 +1,28 @@
+{
+  "total_questions": 20,
+  "average_scores": {
+    "naive_rag": {
+      "rouge1": 0.44711711568720364,
+      "rouge2": 0.2839057197651087,
+      "rougeL": 0.39017644638994137
+    },
+    "contextual_retrieval": {
+      "rouge1": 0.4102090130267045,
+      "rouge2": 0.23717159730016793,
+      "rougeL": 0.3375732333983995
+    }
+  },
+  "improvements": {
+    "rouge1_percent": -8.254683474546185,
+    "rouge2_percent": -16.461141573197807,
+    "rougeL_percent": -13.481903758734411
+  },
+  "statistics": {
+    "questions_improved": 7,
+    "questions_degraded": 13,
+    "questions_unchanged": 0,
+    "max_improvement": 0.6716417910447761,
+    "max_degradation": -0.5701754385964912,
+    "avg_improvement": -0.03690810266049921
+  }
+}

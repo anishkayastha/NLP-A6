@@ -1,0 +1,122 @@
+[
+  {
+    "question": "What is the standard architecture for building large language models?",
+    "answer": "The standard architecture for building large language models is the transformer.",
+    "topic": "core concepts",
+    "page": "1"
+  },
+  {
+    "question": "What is the purpose of transformers in language modeling?",
+    "answer": "Transformers are used in language modeling to predict output tokens one by one by conditioning on the prior context.",
+    "topic": "core concepts",
+    "page": "1"
+  },
+  {
+    "question": "What is the purpose of the transformer's multi-head attention layer?",
+    "answer": "The multi-head attention layer, also called a self-attention layer, helps build contextual representations of a token’s meaning by attending to and integrating information from surrounding tokens. It helps the model learn how tokens relate to each other over large spans.",
+    "topic": "Self-attention mechanism",
+    "page": "2"
+  },
+  {
+    "question": "How does a token pass through the transformer architecture?",
+    "answer": "Each token is first converted to an embedding from the embedding matrix E. Then, a special mechanism encodes the position/index of the token in the input string and adds it to the embedding. The resulting embedding, which represents both the word and its position, is then passed through a set of N transformer blocks.",
+    "topic": "Transformer blocks",
+    "page": "2"
+  },
+  {
+    "question": "What happens after the N transformer blocks?",
+    "answer": "After the N transformer blocks, the output embedding that is produced by the final transformer block is passed through a linear unembedding matrix U and then a softmax over the vocabulary to generate a distribution over possible next tokens.",
+    "topic": "Transformer blocks",
+    "page": "2"
+  },
+  {
+    "question": "What are the components of the language modeling head?",
+    "answer": "The language modeling head consists of an unembedding matrix and a softmax over the vocabulary.",
+    "topic": "Language modeling head",
+    "page": "2"
+  },
+  {
+    "question": "What is the purpose of attention in transformers?",
+    "answer": "Attention allows the representation of a word’s meaning to be context-dependent, rather than always the same irrespective of the context.",
+    "topic": "Attention",
+    "page": "3"
+  },
+  {
+    "question": "What is the purpose of the input encoding in a transformer?",
+    "answer": "The input encoding in a transformer is used to convert each input token into an embedding and add the position/index of the token in the input string.",
+    "topic": "Input encoding",
+    "page": "2"
+  },
+  {
+    "question": "What is the relationship between the residual stream and the transformer blocks?",
+    "answer": "The input embedding is directly passed up to the output through the residual stream while being enriched by the application of various processing modules in the transformer blocks.",
+    "topic": "Transformer blocks",
+    "page": "2"
+  },
+  {
+    "question": "What does multi-head attention layer also known as?",
+    "answer": "Multi-head attention layer is also known as a self-attention layer.",
+    "topic": "Multi-head attention",
+    "page": "2"
+  },
+  {
+    "question": "What does the transformer architecture do with each input token?",
+    "answer": "Each input token gets encoded, passed through a set of stacked transformer blocks, and then a language model head that predicts the next token.",
+    "topic": "Transformer blocks",
+    "page": "3"
+  },
+  {
+    "question": "What does the transformer-based language models complexity mean?",
+    "answer": "Transformer-based language models are complex, meaning the details of how they work will unfold over multiple chapters in the book.",
+    "topic": "Advanced topics",
+    "page": "2"
+  },
+  {
+    "question": "What is the function of the layer normalization in transformers?",
+    "answer": "The function of the layer normalization in transformers is to keep the outputs from all the previous layers and blocks in check, preventing them from becoming too large or too small, which could negatively impact the learning process.",
+    "topic": "Layer normalization",
+    "page": "2"
+  },
+  {
+    "question": "What is the purpose of the feedforward networks in transformers?",
+    "answer": "The purpose of the feedforward networks in transformers is to add information to the processing of an input token as it passes through the network.",
+    "topic": "Feedforward networks",
+    "page": "1"
+  },
+  {
+    "question": "What is the purpose of positional encoding in transformers?",
+    "answer": "The purpose of positional encoding in transformers is to encode the position/index of the token in the input string and add it to the token's embedding.",
+    "topic": "Positional encoding",
+    "page": "2"
+  },
+  {
+    "question": "How many transformer blocks are typically in a transformer architecture?",
+    "answer": "A transformer architecture typically has anywhere from 12 to 96 or more stacked blocks.",
+    "topic": "Technical details",
+    "page": "2"
+  },
+  {
+    "question": "What type of language models are transformers typically used for?",
+    "answer": "Transformers are typically used for left-to-right (sometimes called causal or autoregressive) language modeling.",
+    "topic": "core concepts",
+    "page": "1"
+  },
+  {
+    "question": "What does the transformer's embedding matrix E do?",
+    "answer": "The transformer's embedding matrix E is a linear layer that maps a token id to a vector embedding representing that token.",
+    "topic": "Technical details",
+    "page": "2"
+  },
+  {
+    "question": "What does the transformer's unembedding matrix U do?",
+    "answer": "The transformer's unembedding matrix U is used to convert the output embedding produced by the final transformer block into a form that can be passed through a softmax to generate a distribution over possible next tokens.",
+    "topic": "Technical details",
+    "page": "2"
+  },
+  {
+    "question": "What concept distinguishes transformers from feedforward layers?",
+    "answer": "The concept that distinguishes transformers from feedforward layers is the multi-head attention layer, or self-attention.",
+    "topic": "Advanced topics",
+    "page": "2"
+  }
+]

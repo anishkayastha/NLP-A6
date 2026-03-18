@@ -1,0 +1,99 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environments
+venv/
+env/
+ENV/
+.venv/
+.env
+
+# Environment Variables
+.env
+.env.local
+*.env
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+
+# OpenAI API Keys
+*.key
+api_key.txt
+
+# Data files (large files - comment out if you want to commit them)
+# data/
+# vectorstore/
+
+# Results (optional - uncomment if you don't want to commit results)
+# results/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+
+# Cache
+.cache/
+*.cache
+
+# UV cache
+.uv/
+
+# Chainlit
+.chainlit/
+.files/
+
+# Large binary files
+*.faiss
+
+# Compiled files
+*.pyc
+*.pyo
+*.pyd
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Coverage reports
+htmlcov/
+.coverage
+.coverage.*
+
+# Testing
+.pytest_cache/
+.tox/

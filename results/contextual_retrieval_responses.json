@@ -1,0 +1,442 @@
+[
+  {
+    "question": "What is the standard architecture for building large language models?",
+    "ground_truth": "The standard architecture for building large language models is the transformer.",
+    "contextual_answer": "The standard architecture for building large language models is the transformer.",
+    "retrieved_chunks": [
+      {
+        "text": "This chunk from Chapter 8 discusses the scale of large language models (LLMs), specifically highlighting a model from Meta with 405 billion parameters, and introduces the concept of scaling laws and techniques for implementing LLMs with limited resources.\n\nfrom Meta has 405 billion parameters (it has L=126 layers, model dimensionality\nd=16,384, and A=128 attention heads) and was trained on 15.6 terabytes of text\ntokens using a vocabulary of 128K tokens (Llama Team, 2024). So there is a lot of\nresearch on understanding how LLMs scale, and especially how to implement them\ngiven limited resources. In the next few sections we discuss how to think about\nscale (the concept of scaling laws), and important techniques for getting language",
+        "page": 13,
+        "similarity": 0.5583901423725095
+      },
+      {
+        "text": "This chunk from Chapter 8 discusses the architecture and functioning of transformers in language modeling, highlighting the role of multi-head attention, the processing of input tokens through transformer blocks, and the final steps of generating output probabilities for predicting the next token in a sequence. It also touches on the challenges associated with scaling large language models.\n\n8.8\n•\nDEALING WITH SCALE\n21\nlong\nand\nthanks\nfor\nNext token\nall\nLoss\n…\n=\n−log yand\n…\n−log ythanks\nStacked\nTransformer\nBlocks\nSo\nlong\nand\nthanks\nfor\n…\n…\n…\nU\nInput tokens\nx1\nx2\nLanguage\nModeling\nHead\nx3\nx4\nx5\nInput\nEncoding\nE\n1\n+\nE\n2\n+\nE\n3\n+\nE\n4\n+\nE\n5\n+\n…\n…\n…\n…\n…\nU\nU\nU\nU\n…\nlogits\nlogits\nlogits\nlogits\nlogits\nFigure 8.17\nTraining a transformer as a language model.\n8.8\nDealing with Scale\nLarge language models are large. For example the Llama 3.1 405B Instruct model",
+        "page": 26,
+        "similarity": 0.5446495003050446
+      },
+      {
+        "text": "This chunk from Chapter 8 discusses the transformer architecture, which is the foundational model for large language processing tasks, emphasizing its components such as embeddings, multi-head attention, and the overall structure of the transformer decoder used for autoregressive language modeling.\n\nSpeech and Language Processing.\nDaniel Jurafsky & James H. Martin.\nCopyright © 2026.\nAll\nrights reserved.\nDraft of January 6, 2026.\nCHAPTER\n8\nTransformers\n“The true art of memory is the art of attention ”\nSamuel Johnson, Idler #74, September 1759\nIn this chapter we introduce the transformer, the standard architecture for build-\ning large language models. As we discussed in the prior chapter, transformer-based\nlarge language models have completely changed the ﬁeld of speech and language",
+        "page": 2,
+        "similarity": 0.5399373066740696
+      }
+    ]
+  },
+  {
+    "question": "What is the purpose of transformers in language modeling?",
+    "ground_truth": "Transformers are used in language modeling to predict output tokens one by one by conditioning on the prior context.",
+    "contextual_answer": "The purpose of transformers in language modeling is to utilize their architecture, which includes components like multi-head attention and embeddings, to generate contextual representations of tokens. This allows them to predict upcoming words in a sequence by processing input tokens through transformer blocks and generating output probabilities over the vocabulary. Transformers also benefit from a wide context window, enabling them to draw on extensive amounts of context for more accurate predictions.",
+    "retrieved_chunks": [
+      {
+        "text": "This chunk from Chapter 8 discusses the architecture and functioning of transformer-based language models, focusing on the components such as multi-head attention, embeddings, and the process of generating output probabilities for predicting the next tokens in a sequence. It also highlights the efficiency improvements and the wide context window that transformers utilize for language modeling.\n\nthrough a softmax to generate word probabilities.\n• Transformer-based language models have a wide context window (200K to-\nkens or even more for very large models with special mechanisms) allowing\nthem to draw on enormous amounts of context to predict upcoming words.\n• There are various computational tricks for making large language models\nmore efﬁcient, such as the KV cache and parameter-efﬁcient ﬁnetuning.\nHistorical Notes",
+        "page": 24,
+        "similarity": 0.6116720189557916
+      },
+      {
+        "text": "This chunk from Chapter 8 discusses the architecture of transformers, specifically focusing on the transformer decoder used for language modeling, including the role of embeddings, multi-head attention, and the language modeling head that generates output probabilities over the vocabulary.\n\n18\nCHAPTER 8\n•\nTRANSFORMERS\nLayer L\nTransformer\nBlock\nSoftmax over vocabulary V\nUnembedding layer\n…\n[1 x |V|]\nLogits \nWord probabilities\n[1 x |V|]\nhL\n1\nw1\nw2\nwN\nhL\n2\nhL\nN\n[d x |V|]\n[1 x d]\n   Unembedding layer\nU = ET\ny1\ny2\ny|V|\n…\nu1\nu2\nu|V|\n…\nLanguage Model Head\ntakes hL\nN and outputs a\ndistribution over vocabulary V\nSoftmax\nFigure 8.15\nThe language modeling head: the circuit at the top of a transformer that maps from the output\nembedding for token N from the last transformer layer (hL",
+        "page": 1,
+        "similarity": 0.5865055538672563
+      },
+      {
+        "text": "This chunk from Chapter 8 discusses the architecture and functioning of transformers, particularly focusing on the components involved in language modeling, such as embeddings, multi-head attention, and the processing of input tokens through transformer blocks. It also highlights the significance of attention mechanisms in building contextual representations of tokens.\n\nHistorical Notes\n27\nBa, J. L., J. R. Kiros, and G. E. Hinton. 2016. Layer normal-\nization. NeurIPS workshop.\nBahdanau, D., K. H. Cho, and Y. Bengio. 2015. Neural ma-\nchine translation by jointly learning to align and translate.\nICLR 2015.\nBrown, T., B. Mann, N. Ryder, M. Subbiah, J. Kaplan,\nP. Dhariwal, A. Neelakantan, P. Shyam, G. Sastry,\nA. Askell, S. Agarwal, A. Herbert-Voss, G. Krueger,\nT. Henighan, R. Child, A. Ramesh, D. M. Ziegler, J. Wu,",
+        "page": 24,
+        "similarity": 0.5857300785123758
+      }
+    ]
+  },
+  {
+    "question": "What is the purpose of the transformer's multi-head attention layer?",
+    "ground_truth": "The multi-head attention layer, also called a self-attention layer, helps build contextual representations of a token’s meaning by attending to and integrating information from surrounding tokens. It helps the model learn how tokens relate to each other over large spans.",
+    "contextual_answer": "The purpose of the transformer's multi-head attention layer is to enhance the model's ability to capture different aspects of relationships among input tokens. It achieves this by utilizing multiple attention heads, each with its own set of query, key, and value weight matrices, allowing the model to focus on various patterns and contextual relationships in the input data.",
+    "retrieved_chunks": [
+      {
+        "text": "This chunk from Chapter 8 discusses the architecture of transformers, specifically focusing on the multi-head attention mechanism, which allows the model to capture different aspects of relationships among input tokens by utilizing separate attention heads with their own parameters.\n\ncurrent token, or to look for particular kinds of patterns in the context.\nSo in multi-head attention we have A separate attention heads that reside in\nmulti-head\nattention\nparallel layers at the same depth in a model, each with its own set of parameters that\nallows the head to model different aspects of the relationships among inputs. Thus\neach head i in a self-attention layer has its own set of query, key, and value matrices:",
+        "page": 7,
+        "similarity": 0.6394396268254448
+      },
+      {
+        "text": "This chunk from Chapter 8 discusses the architecture of a transformer block, highlighting the residual stream through which information flows and the role of the multi-head attention module in integrating information from other token positions.\n\nusually of the same size. then projected d, thus producing an output of the same size as the input.\nxi\nhi-1\nxi-1\nhi\n…\nLayer Norm\n+\nLayer Norm\nMultiHead\nAttention\nFeedforward\n+\nxi-2\nhi-2\nFigure 8.7\nThe architecture of a transformer block showing the residual stream, showing\nhow most information ﬂows up through the residual stream, and only the attention module\nis sensitive to information from other streams at prior token positions. In this ﬁgure and",
+        "page": 7,
+        "similarity": 0.6324533070790243
+      },
+      {
+        "text": "This chunk from Chapter 8 discusses the multi-head attention mechanism within the transformer architecture, explaining how multiple attention heads operate with their own query, key, and value weight matrices to enhance the model's ability to capture contextual relationships among tokens.\n\nlayer has A heads, each with its own query, key, and value weight matrices. In this ﬁgure, we show A = 4, a\nsmaller value than is usually used, just to ﬁt on the page. The outputs from each of the heads are of shape [1×dv]\nand are concatenated and then projected into a different space by the WO matrix. Usually the dimensionality\ndv of the heads is set so that dv = d/A, with the result that WO is a square matrix of shape [Adv ×d] = [d ×d].",
+        "page": 26,
+        "similarity": 0.6252135926400373
+      }
+    ]
+  },
+  {
+    "question": "How does a token pass through the transformer architecture?",
+    "ground_truth": "Each token is first converted to an embedding from the embedding matrix E. Then, a special mechanism encodes the position/index of the token in the input string and adds it to the embedding. The resulting embedding, which represents both the word and its position, is then passed through a set of N transformer blocks.",
+    "contextual_answer": "A token passes through the transformer architecture by first being converted to an embedding from the embedding matrix. It then undergoes processing through a series of transformer blocks, where the multi-head attention layer plays a crucial role in building contextual representations by integrating information from surrounding tokens. The processed information is added back into a continuous residual stream, which maintains a combination of the original input and the outputs from various processing components. This residual stream allows for a continuous flow of information as the token representation is updated through each layer of the network.",
+    "retrieved_chunks": [
+      {
+        "text": "This chunk from Chapter 8 discusses the architecture of transformers, specifically focusing on how a single token is processed through the layers of the network, including the embedding, positional encoding, and the role of multi-head attention in building contextual representations for language modeling.\n\nlayer takes inputs (not shown in detail) from the neighboring token streams. This is thus one\ncolumn of an autoregressive transformer language model, taking an input token and outputting\na distribution over next tokens.\nFig. 8.1 sketches the transformer architecture following a single token as it is\npasses up through the layers of the network. Each token is ﬁrst converted to an\nembedding from the embedding matrix E. Recall from Chapter 6 in Section ??",
+        "page": 18,
+        "similarity": 0.5675061852540675
+      },
+      {
+        "text": "This chunk from Chapter 8 discusses the process of how the transformer architecture processes input tokens through a series of transformer blocks, emphasizing the role of the multi-head attention layer in building contextual representations and integrating information from surrounding tokens into the residual stream.\n\nthe result is added back into the stream, in this case to the original input vector\nxi. And then this summed vector is again passed through another layer norm and a",
+        "page": 1,
+        "similarity": 0.5577828051575744
+      },
+      {
+        "text": "This chunk from Chapter 8 discusses the concept of the residual stream in the transformer architecture, highlighting how individual token representations are processed through transformer blocks by maintaining a continuous stream of information that combines the original input with outputs from various processing components.\n\nabout the block that is called the residual stream (Elhage et al., 2021). In the resid-\nresidual stream\nual stream viewpoint, we consider the processing of an individual token i through\nthe transformer block as a single stream of d-dimensional representations for token\nposition i. This residual stream starts with the original input vector, and the various\ncomponents read their input from the residual stream and add their output back into\nthe stream.",
+        "page": 5,
+        "similarity": 0.5538426901678425
+      }
+    ]
+  },
+  {
+    "question": "What happens after the N transformer blocks?",
+    "ground_truth": "After the N transformer blocks, the output embedding that is produced by the final transformer block is passed through a linear unembedding matrix U and then a softmax over the vocabulary to generate a distribution over possible next tokens.",
+    "contextual_answer": "After the N transformer blocks, there is a single extra layer normalization that is applied to the last output of each token stream (denoted as hi) just below the language model head layer. This final layer normalization prepares the output for the subsequent prediction of the next token in the sequence.",
+    "retrieved_chunks": [
+      {
+        "text": "This chunk from Chapter 8 discusses the structure and function of transformer blocks within the transformer architecture, highlighting the role of the residual stream, multi-head attention, and feedforward layers in processing input tokens for language modeling.\n\nweighted by how relevant they are for the processing of the current word.\n• A transformer block consists of a residual stream in which the input from\nthe prior layer is passed up to the next layer, with the output of different com-\nponents added to it. These components include a multi-head attention layer\nfollowed by a feedforward layer, each preceded by layer normalizations.\nTransformer blocks are stacked to make deeper and more powerful networks.",
+        "page": 9,
+        "similarity": 0.5532551243289432
+      },
+      {
+        "text": "This chunk from Chapter 8 discusses the architecture of a transformer block, highlighting the residual stream through which information flows and the role of the multi-head attention module in integrating information from other token positions.\n\nusually of the same size. then projected d, thus producing an output of the same size as the input.\nxi\nhi-1\nxi-1\nhi\n…\nLayer Norm\n+\nLayer Norm\nMultiHead\nAttention\nFeedforward\n+\nxi-2\nhi-2\nFigure 8.7\nThe architecture of a transformer block showing the residual stream, showing\nhow most information ﬂows up through the residual stream, and only the attention module\nis sensitive to information from other streams at prior token positions. In this ﬁgure and",
+        "page": 7,
+        "similarity": 0.5184177612823396
+      },
+      {
+        "text": "This chunk from Chapter 8 discusses the architecture of transformers, specifically focusing on the process of embedding input tokens, the role of multi-head attention in contextual representation, and the structure of the residual stream as it passes through multiple transformer blocks to ultimately predict the next token in a sequence.\n\ntransformer blocks, the residual stream is usually representing the following token,\nsince at the very end it’s being trained to predict the next token.\nOnce we stack many blocks, there is one more requirement: at the very end of\nthe last (highest) transformer block, there is a single extra layer norm that is run on\nthe last hi of each token stream (just below the language model head layer that we\nwill deﬁne soon). 2\n2",
+        "page": 25,
+        "similarity": 0.5174307809153432
+      }
+    ]
+  },
+  {
+    "question": "What are the components of the language modeling head?",
+    "ground_truth": "The language modeling head consists of an unembedding matrix and a softmax over the vocabulary.",
+    "contextual_answer": "The language modeling head consists of additional neural circuitry added on top of the basic transformer architecture. It processes the output embedding from the final transformer block through a linear unembedding matrix and a softmax function to generate a distribution over possible next tokens in the context of autoregressive language modeling.",
+    "retrieved_chunks": [
+      {
+        "text": "This chunk from Chapter 8 discusses the language modeling head, which is an additional component added to the basic transformer architecture to facilitate language modeling tasks, highlighting its role in generating distributions over possible next tokens in a sequence.\n\n8.5\nThe Language Modeling Head\nThe last component of the transformer we must introduce is the language modeling\nhead. Here we are using the word head to mean the additional neural circuitry we\nlanguage\nmodeling head\nhead\nadd on top of the basic transformer architecture when we apply pretrained trans-\nformer models to various tasks. The language modeling head is the circuitry we\nneed to do language modeling.\nRecall that language models, from the simple n-gram models of Chapter 3 through",
+        "page": 11,
+        "similarity": 0.679263274634384
+      },
+      {
+        "text": "This chunk from Chapter 8 discusses the language modeling head of the transformer architecture, detailing how the output embedding from the final transformer block is processed through a linear unembedding matrix and a softmax function to generate a distribution over possible next tokens in the context of autoregressive language modeling.\n\n8.5\n•\nTHE LANGUAGE MODELING HEAD\n17\npositions, like the fact that position 4 in an input is more closely related to position\n5 than it is to position 17.\nA more complex style of positional embedding methods extend this idea of cap-\nturing relationships even further to directly represent relative position instead of\nrelative\nposition\nabsolute position, often implemented in the attention mechanism at each layer rather\nthan being added once at the initial input.\n8.5\nThe Language Modeling Head",
+        "page": 24,
+        "similarity": 0.5862817839384622
+      },
+      {
+        "text": "This chunk from Chapter 8 discusses the architecture and components of transformers, particularly focusing on the multi-head attention mechanism and how it enables contextual representations of tokens in language modeling. It also highlights the process of embedding tokens, incorporating positional information, and generating output distributions over possible next tokens.\n\nC. Winter, C. Hesse, M. Chen, E. Sigler, M. Litwin,\nS. Gray, B. Chess, J. Clark, C. Berner, S. McCandlish,\nA. Radford, I. Sutskever, and D. Amodei. 2020. Language\nmodels are few-shot learners. NeurIPS, volume 33.\nCheng, J., L. Dong, and M. Lapata. 2016. Long short-term\nmemory-networks for machine reading. EMNLP.\nCrosbie, J. and E. Shutova. 2022.\nInduction heads as an\nessential mechanism for pattern matching in in-context\nlearning. ArXiv preprint.",
+        "page": 10,
+        "similarity": 0.5812526889130066
+      }
+    ]
+  },
+  {
+    "question": "What is the purpose of attention in transformers?",
+    "ground_truth": "Attention allows the representation of a word’s meaning to be context-dependent, rather than always the same irrespective of the context.",
+    "contextual_answer": "The purpose of attention in transformers is to build contextual representations of a token's meaning by integrating information from surrounding tokens. This mechanism allows the model to learn how tokens relate to each other over larger spans, enhancing the understanding of their relationships. Attention enables the model to compare the current token (query) with preceding tokens (keys) to determine similarity weights, thereby augmenting the representation of the current token with relevant information from other tokens.",
+    "retrieved_chunks": [
+      {
+        "text": "This chunk from Chapter 8 discusses the architecture of transformers, focusing on the components involved in language modeling, such as embeddings, positional encoding, and the multi-head attention mechanism, which allows the model to build contextual representations of tokens by integrating information from surrounding tokens.\n\n6\nCHAPTER 8\n•\nTRANSFORMERS\ninto a probability distribution used to weight the sum of the prior vectors. But now\nwe’re ready to remove the simpliﬁcations.\nA single attention head using query, key, and value matrices\nNow that we’ve\nseen a simple intuition of attention, let’s introduce the actual attention head, the\nattention head\nversion of attention that’s used in transformers. (The word head is often used in\nhead",
+        "page": 25,
+        "similarity": 0.5569631666412539
+      },
+      {
+        "text": "This chunk from Chapter 8 discusses the concept of self-attention in transformers, explaining how it enables the model to create contextual representations of tokens by integrating information from surrounding tokens, thereby enhancing the understanding of their relationships over larger spans.\n\nalso called a self-attention layer. Attention can be thought of as a way to build\ncontextual representations of a token’s meaning by attending to and integrating\ninformation from surrounding tokens, helping the model learn how tokens relate to\neach other over large spans. It can also be thought of as a way to move information\nfrom one residual stream to another, augmenting the stream at one token position\nwith information from another token position.",
+        "page": 19,
+        "similarity": 0.5508226413984261
+      },
+      {
+        "text": "This chunk from Chapter 8 discusses the architecture of transformers, specifically focusing on the multi-head attention mechanism, which allows for the contextual representation of tokens by defining their roles as queries and keys during the attention process.\n\nhead\ntransformers to refer to speciﬁc structured layers). The attention head allows us to\ndistinctly represent three different roles that each input embedding plays during the\ncourse of the attention process:\n• As the current element being compared to the preceding inputs. We’ll refer to\nthis role as a query.\nquery\n• In its role as a preceding input that is being compared to the current element\nto determine a similarity weight. We’ll refer to this role as a key.\nkey",
+        "page": 9,
+        "similarity": 0.5499007982161116
+      }
+    ]
+  },
+  {
+    "question": "What is the purpose of the input encoding in a transformer?",
+    "ground_truth": "The input encoding in a transformer is used to convert each input token into an embedding and add the position/index of the token in the input string.",
+    "contextual_answer": "The purpose of the input encoding in a transformer is to represent tokens in a sequence by combining their embeddings with positional encodings. This allows the model to capture both the identity of the tokens (words) and their sequential positions in the input string. The resulting representation is then processed through a series of transformer blocks to enrich the representation of each token, ultimately leading to the generation of word probabilities in a language model.",
+    "retrieved_chunks": [
+      {
+        "text": "This chunk from Chapter 8 discusses the input processing in transformer architectures, specifically how embeddings and positional encodings are combined to represent tokens in a sequence, and outlines the structure of language models built from stacks of transformer blocks culminating in a language model head that generates word probabilities.\n\n• The input to a transformer is computed by adding an embedding (computed\nwith an embedding matrix) to a positional encoding that represents the se-\nquential position of the token in the window.\n• Language models can be built out of stacks of transformer blocks, with a\nlanguage model head at the top, which applies an unembedding matrix to\nthe output H of the top layer to generate the logits, which are then passed\nthrough a softmax to generate word probabilities.",
+        "page": 18,
+        "similarity": 0.5169672908156706
+      },
+      {
+        "text": "This chunk from Chapter 8 discusses the mechanism by which transformers encode the position of tokens in an input string by adding positional information to their embeddings, and how these embeddings are processed through a series of transformer blocks to enrich the representation of each token.\n\n2\nCHAPTER 8\n•\nTRANSFORMERS\nTransformers also have a special mechanism for encoding the position/index of the\ntoken in the input string, which is simply added to the embedding. The resulting\nembedding represents both the word and its position. and is then passed through a\nset of N transformer blocks.\nIt’s common to think of each of these transformer blocks as part of a stream in\nwhich the input embedding is directly passed up to the output, while simultaneously",
+        "page": 1,
+        "similarity": 0.5106371063218781
+      },
+      {
+        "text": "This chunk from Chapter 8 discusses the architecture of transformers, specifically focusing on how input tokens are processed through embeddings, positional encoding, and various components like multi-head attention and feedforward layers, all while utilizing residual connections and layer normalization to enhance the representation of the tokens as they move through the network.\n\nthe stream.\nThe input at the bottom of the stream is an embedding for a token, which has\ndimensionality d. This initial embedding gets passed up (by residual connections),\nand is progressively added to by the other components of the transformer: the at-\ntention layer that we have seen, and the feedforward layer that we will introduce.\nBefore the attention and feedforward layer is a computation called the layer norm.\nThus the initial vector is passed through a layer norm and attention layer, and",
+        "page": 24,
+        "similarity": 0.5050540274717917
+      }
+    ]
+  },
+  {
+    "question": "What is the relationship between the residual stream and the transformer blocks?",
+    "ground_truth": "The input embedding is directly passed up to the output through the residual stream while being enriched by the application of various processing modules in the transformer blocks.",
+    "contextual_answer": "The residual stream is a key component of transformer blocks in the transformer architecture. It serves as a continuous stream of d-dimensional representations for each token, starting with the original input vector. Within each transformer block, the input from the prior layer is passed to the next layer through the residual stream, and the outputs from various components, such as the multi-head attention layer and the feedforward layer, are added back into this stream. This structure allows for the integration of information from different processing components while maintaining the original input, facilitating the processing of input tokens for tasks like language modeling.",
+    "retrieved_chunks": [
+      {
+        "text": "This chunk from Chapter 8 discusses the concept of the residual stream in the transformer architecture, highlighting how individual token representations are processed through transformer blocks by maintaining a continuous stream of information that combines the original input with outputs from various processing components.\n\nabout the block that is called the residual stream (Elhage et al., 2021). In the resid-\nresidual stream\nual stream viewpoint, we consider the processing of an individual token i through\nthe transformer block as a single stream of d-dimensional representations for token\nposition i. This residual stream starts with the original input vector, and the various\ncomponents read their input from the residual stream and add their output back into\nthe stream.",
+        "page": 5,
+        "similarity": 0.6502288057380315
+      },
+      {
+        "text": "This chunk from Chapter 8 discusses the structure and function of transformer blocks within the transformer architecture, highlighting the role of the residual stream, multi-head attention, and feedforward layers in processing input tokens for language modeling.\n\nweighted by how relevant they are for the processing of the current word.\n• A transformer block consists of a residual stream in which the input from\nthe prior layer is passed up to the next layer, with the output of different com-\nponents added to it. These components include a multi-head attention layer\nfollowed by a feedforward layer, each preceded by layer normalizations.\nTransformer blocks are stacked to make deeper and more powerful networks.",
+        "page": 9,
+        "similarity": 0.5775757923775161
+      },
+      {
+        "text": "This chunk from Chapter 8 discusses the architecture of transformers, specifically focusing on the process of embedding input tokens, the role of multi-head attention in contextual representation, and the structure of the residual stream as it passes through multiple transformer blocks to ultimately predict the next token in a sequence.\n\ntransformer blocks, the residual stream is usually representing the following token,\nsince at the very end it’s being trained to predict the next token.\nOnce we stack many blocks, there is one more requirement: at the very end of\nthe last (highest) transformer block, there is a single extra layer norm that is run on\nthe last hi of each token stream (just below the language model head layer that we\nwill deﬁne soon). 2\n2",
+        "page": 25,
+        "similarity": 0.5527048172923452
+      }
+    ]
+  },
+  {
+    "question": "What does multi-head attention layer also known as?",
+    "ground_truth": "Multi-head attention layer is also known as a self-attention layer.",
+    "contextual_answer": "The context does not provide a specific alternative name for the multi-head attention layer. Therefore, I cannot answer the question based on the provided context.",
+    "retrieved_chunks": [
+      {
+        "text": "This chunk from Chapter 8 discusses the architecture of transformers, specifically focusing on the multi-head attention mechanism, which allows the model to capture different aspects of relationships among input tokens by utilizing separate attention heads with their own parameters.\n\ncurrent token, or to look for particular kinds of patterns in the context.\nSo in multi-head attention we have A separate attention heads that reside in\nmulti-head\nattention\nparallel layers at the same depth in a model, each with its own set of parameters that\nallows the head to model different aspects of the relationships among inputs. Thus\neach head i in a self-attention layer has its own set of query, key, and value matrices:",
+        "page": 7,
+        "similarity": 0.6034635274354037
+      },
+      {
+        "text": "This chunk from Chapter 8 discusses the multi-head attention mechanism within the transformer architecture, explaining how multiple attention heads operate with their own query, key, and value weight matrices to enhance the model's ability to capture contextual relationships among tokens.\n\nlayer has A heads, each with its own query, key, and value weight matrices. In this ﬁgure, we show A = 4, a\nsmaller value than is usually used, just to ﬁt on the page. The outputs from each of the heads are of shape [1×dv]\nand are concatenated and then projected into a different space by the WO matrix. Usually the dimensionality\ndv of the heads is set so that dv = d/A, with the result that WO is a square matrix of shape [Adv ×d] = [d ×d].",
+        "page": 26,
+        "similarity": 0.57567853497824
+      },
+      {
+        "text": "This chunk from Chapter 8 discusses the multi-head attention mechanism within the transformer architecture, highlighting how it integrates information from surrounding tokens to build contextual representations, particularly in a left-to-right language modeling context. It also presents equations that describe the computation of multi-head attention and its dependence on the current input and preceding tokens.\n\nj\n(8.18)\nai = (head1 ⊕head2...⊕headA)WO (8.19)\nMultiHeadAttention(xi,[x1,··· ,xi−1]) = ai\n(8.20)\nNote in Eq. 8.20 that MultiHeadAttention is a function of the current input xi, as\nwell as all the other inputs. For the causal or left-to-right attention that we use in\nthis chapter, the other inputs are only to the left, but we’ll also see a version of\nattention in Chapter 9 where attention is a function of the tokens to the right as well.",
+        "page": 3,
+        "similarity": 0.5644880518962981
+      }
+    ]
+  },
+  {
+    "question": "What does the transformer architecture do with each input token?",
+    "ground_truth": "Each input token gets encoded, passed through a set of stacked transformer blocks, and then a language model head that predicts the next token.",
+    "contextual_answer": "The transformer architecture processes each input token through various components such as embeddings, multi-head attention, and layer normalization. This process enhances the model's ability to understand and generate language by building contextual representations and integrating information from surrounding tokens into the residual stream. Each token vector is transformed while maintaining consistent input and output dimensions, allowing for the stacking of multiple transformer blocks.",
+    "retrieved_chunks": [
+      {
+        "text": "This chunk from Chapter 8 discusses the process of how the transformer architecture processes input tokens through a series of transformer blocks, emphasizing the role of the multi-head attention layer in building contextual representations and integrating information from surrounding tokens into the residual stream.\n\nthe result is added back into the stream, in this case to the original input vector\nxi. And then this summed vector is again passed through another layer norm and a",
+        "page": 1,
+        "similarity": 0.6283894746548846
+      },
+      {
+        "text": "This chunk from Chapter 8 discusses the architecture of transformers, specifically focusing on the processing of individual input tokens through various components such as embeddings, multi-head attention, and layer normalization, which collectively enhance the model's ability to understand and generate language.\n\nand layer norm computations in the context of processing a single input xi at token",
+        "page": 12,
+        "similarity": 0.6248135489801783
+      },
+      {
+        "text": "This chunk from Chapter 8 discusses the architecture of transformers, specifically focusing on the process of embedding input tokens, the role of multi-head attention in contextualizing token representations, and the structure of transformer blocks that allow for stacking multiple layers while maintaining consistent input and output dimensions.\n\nToken A\nresidual\n stream\nToken B\nresidual \nstream\nFigure 8.8\nAn attention head can move information from token A’s residual stream into\ntoken B’s residual stream.\nCrucially, the input and output dimensions of transformer blocks are matched so\nthey can be stacked. Each token vector xi at the input to the block has dimensionality\nd, and the output hi also has dimensionality d. Transformers for large language\nmodels stack many of these blocks, from 12 layers (used for the T5 or GPT-3-small",
+        "page": 22,
+        "similarity": 0.622683399463906
+      }
+    ]
+  },
+  {
+    "question": "What does the transformer-based language models complexity mean?",
+    "ground_truth": "Transformer-based language models are complex, meaning the details of how they work will unfold over multiple chapters in the book.",
+    "contextual_answer": "The context provided does not explicitly define what \"transformer-based language models complexity\" means. Therefore, I cannot answer the question based on the given context.",
+    "retrieved_chunks": [
+      {
+        "text": "This chunk from Chapter 8 discusses the architecture and functioning of transformer-based language models, focusing on the components such as multi-head attention, embeddings, and the process of generating output probabilities for predicting the next tokens in a sequence. It also highlights the efficiency improvements and the wide context window that transformers utilize for language modeling.\n\nthrough a softmax to generate word probabilities.\n• Transformer-based language models have a wide context window (200K to-\nkens or even more for very large models with special mechanisms) allowing\nthem to draw on enormous amounts of context to predict upcoming words.\n• There are various computational tricks for making large language models\nmore efﬁcient, such as the KV cache and parameter-efﬁcient ﬁnetuning.\nHistorical Notes",
+        "page": 24,
+        "similarity": 0.5892366668437948
+      },
+      {
+        "text": "This chunk from Chapter 8 discusses the architecture and functioning of transformer-based language models, specifically focusing on how they utilize multi-head attention and residual streams to process input tokens and generate predictions for the next tokens in a sequence. It also contrasts the context size used in traditional language models with that of transformers, highlighting the potential for much larger context windows in transformer architectures.\n\nlanguage models of Chapter 3 compute the probability of a word given counts of\nits occurrence with the n −1 prior words. The context is thus of size n −1. For\ntransformer language models, the context is the size of the transformer’s context\nwindow, which can be quite large, like 32K tokens for large models (and much larger\ncontexts of millions of words are possible with special long-context architectures).\nThe job of the language modeling head is to take the output of the ﬁnal trans-",
+        "page": 24,
+        "similarity": 0.5782926148464971
+      },
+      {
+        "text": "This chunk from Chapter 8 discusses the architecture and functioning of transformers in language modeling, highlighting the role of multi-head attention, the processing of input tokens through transformer blocks, and the final steps of generating output probabilities for predicting the next token in a sequence. It also touches on the challenges associated with scaling large language models.\n\n8.8\n•\nDEALING WITH SCALE\n21\nlong\nand\nthanks\nfor\nNext token\nall\nLoss\n…\n=\n−log yand\n…\n−log ythanks\nStacked\nTransformer\nBlocks\nSo\nlong\nand\nthanks\nfor\n…\n…\n…\nU\nInput tokens\nx1\nx2\nLanguage\nModeling\nHead\nx3\nx4\nx5\nInput\nEncoding\nE\n1\n+\nE\n2\n+\nE\n3\n+\nE\n4\n+\nE\n5\n+\n…\n…\n…\n…\n…\nU\nU\nU\nU\n…\nlogits\nlogits\nlogits\nlogits\nlogits\nFigure 8.17\nTraining a transformer as a language model.\n8.8\nDealing with Scale\nLarge language models are large. For example the Llama 3.1 405B Instruct model",
+        "page": 26,
+        "similarity": 0.5639801662525027
+      }
+    ]
+  },
+  {
+    "question": "What is the function of the layer normalization in transformers?",
+    "ground_truth": "The function of the layer normalization in transformers is to keep the outputs from all the previous layers and blocks in check, preventing them from becoming too large or too small, which could negatively impact the learning process.",
+    "contextual_answer": "The function of layer normalization in transformers is to improve training performance by normalizing the input vectors, which helps maintain the values of hidden layers within a suitable range for gradient-based training. It standardizes the input vectors to have zero mean and a standard deviation of one, and introduces learnable parameters (γ and β) to adjust the output. This process facilitates effective training in deep neural networks.",
+    "retrieved_chunks": [
+      {
+        "text": "This chunk from Chapter 8 discusses the concept of layer normalization within the transformer architecture, explaining how it is applied to individual token embeddings rather than entire layers, and its role in facilitating gradient-based training.\n\nfacilitates gradient-based training.\nLayer norm is a variation of the z-score from statistics, applied to a single vec-\ntor in a hidden layer. That is, the term layer norm is a bit confusing; layer norm\nis not applied to an entire transformer layer, but just to the embedding vector of a\nsingle token. Thus the input to layer norm is a single vector of dimensionality d\nand the output is that vector normalized, again of dimensionality d. The ﬁrst step in",
+        "page": 15,
+        "similarity": 0.6628146976170584
+      },
+      {
+        "text": "This chunk from Chapter 8 discusses the architecture of transformers, specifically focusing on the feedforward network (FFN) component and the concept of layer normalization, which helps improve training performance in deep neural networks by maintaining the values of hidden layers within a suitable range for gradient-based training.\n\nmodel, d = 512 and dff = 2048.)\nFFN(xi) = ReLU(xiW1 +b1)W2 +b2\n(8.21)\nLayer Norm\nAt two stages in the transformer block we normalize the vector (Ba\net al., 2016). This process, called layer norm (short for layer normalization), is one\nlayer norm\nof many forms of normalization that can be used to improve training performance\nin deep neural networks by keeping the values of a hidden layer in a range that\nfacilitates gradient-based training.",
+        "page": 6,
+        "similarity": 0.6258060174780293
+      },
+      {
+        "text": "This chunk from Chapter 8 discusses the implementation of layer normalization within the transformer architecture, detailing how it standardizes the input vectors and introduces learnable parameters to adjust the output. It also sets the stage for understanding the overall function computed by a transformer block by breaking it down into its component computations.\n\na new vector with zero mean and a standard deviation of one.\nˆx = (x−µ)\nσ\n(8.24)\nFinally, in the standard implementation of layer normalization, two learnable param-\neters, γ and β, representing gain and offset values, are introduced.\nLayerNorm(x) = γ (x−µ)\nσ\n+β\n(8.25)\nPutting it all together\nThe function computed by a transformer block can be ex-\npressed by breaking it down with one equation for each component computation,",
+        "page": 22,
+        "similarity": 0.6151736153647615
+      }
+    ]
+  },
+  {
+    "question": "What is the purpose of the feedforward networks in transformers?",
+    "ground_truth": "The purpose of the feedforward networks in transformers is to add information to the processing of an input token as it passes through the network.",
+    "contextual_answer": "The purpose of the feedforward networks (FFN) in transformers is to process token embeddings and enhance their representations as they pass through the transformer blocks. The FFN is a fully-connected 2-layer network that is applied in parallel to each embedding vector in the context window, allowing for the transformation of the embeddings. The outputs of the FFN are then combined with residual connections, which helps in maintaining the information from the previous layers while enhancing the representations.",
+    "retrieved_chunks": [
+      {
+        "text": "This chunk from Chapter 8 discusses the architecture of the transformer model, specifically focusing on the feedforward layer, which is a fully-connected 2-layer network that processes token embeddings and enhances their representations as they pass through the transformer blocks. It also highlights the dimensionality differences between the model and the hidden layer in the feedforward network.\n\n10\nCHAPTER 8\n•\nTRANSFORMERS\nposition i.\nFeedforward layer\nThe feedforward layer is a fully-connected 2-layer network,\ni.e., one hidden layer, two weight matrices, as introduced in Chapter 6. The weights\nare the same for each token position i, but are different from layer to layer. It is com-\nmon to make the dimensionality dff of the hidden layer of the feedforward network\nbe larger than the model dimensionality d. (For example in the original transformer\nmodel, d = 512 and dff = 2048.)",
+        "page": 4,
+        "similarity": 0.570105450990184
+      },
+      {
+        "text": "This chunk from Chapter 8 discusses the application of feedforward networks (FFN) within the transformer architecture, illustrating how the same FFN is applied in parallel to each embedding vector in the context window, and how the outputs are combined with residual connections.\n\n(8.43)\nT5 = FFN(T4)\n(8.44)\nH = T5 +T3\n(8.45)\nHere when we use a notation like FFN(T3) we mean that the same FFN is applied\nin parallel to each of the N embedding vectors in the window. Similarly, each of the",
+        "page": 1,
+        "similarity": 0.5522017465175484
+      },
+      {
+        "text": "This chunk from Chapter 8 discusses the structure and function of transformer blocks within the transformer architecture, highlighting the role of the residual stream, multi-head attention, and feedforward layers in processing input tokens for language modeling.\n\nweighted by how relevant they are for the processing of the current word.\n• A transformer block consists of a residual stream in which the input from\nthe prior layer is passed up to the next layer, with the output of different com-\nponents added to it. These components include a multi-head attention layer\nfollowed by a feedforward layer, each preceded by layer normalizations.\nTransformer blocks are stacked to make deeper and more powerful networks.",
+        "page": 9,
+        "similarity": 0.5314596662088534
+      }
+    ]
+  },
+  {
+    "question": "What is the purpose of positional encoding in transformers?",
+    "ground_truth": "The purpose of positional encoding in transformers is to encode the position/index of the token in the input string and add it to the token's embedding.",
+    "contextual_answer": "The purpose of positional encoding in transformers is to encode the position of tokens in an input sequence, which enhances the model's understanding of context and relationships between tokens. By adding positional information to the embeddings of tokens, the model can represent both the identity of the word and its position in the sequence, which is essential for processing sequences of arbitrary length.",
+    "retrieved_chunks": [
+      {
+        "text": "This chunk from Chapter 8 discusses the architecture of transformers, specifically focusing on the mechanism of positional embeddings, which encode the position of tokens in an input sequence to enhance the model's understanding of context and relationships between tokens.\n\nembeddings speciﬁc to each position in an input sequence.\npositional\nembeddings\nWhere do we get these positional embeddings? The simplest method, called\nabsolute position, is to start with randomly initialized embeddings corresponding\nabsolute\nposition\nto each possible input position up to some maximum length. For example, just as\nwe have an embedding for the word ﬁsh, we’ll have an embedding for the position 3.\nAs with word embeddings, these positional embeddings are learned along with other",
+        "page": 9,
+        "similarity": 0.5965899263547897
+      },
+      {
+        "text": "This chunk from Chapter 8 discusses the mechanism by which transformers encode the position of tokens in an input string by adding positional information to their embeddings, and how these embeddings are processed through a series of transformer blocks to enrich the representation of each token.\n\n2\nCHAPTER 8\n•\nTRANSFORMERS\nTransformers also have a special mechanism for encoding the position/index of the\ntoken in the input string, which is simply added to the embedding. The resulting\nembedding represents both the word and its position. and is then passed through a\nset of N transformer blocks.\nIt’s common to think of each of these transformer blocks as part of a stream in\nwhich the input embedding is directly passed up to the output, while simultaneously",
+        "page": 1,
+        "similarity": 0.5898624355284651
+      },
+      {
+        "text": "This chunk from Chapter 8 discusses the mechanism of positional embeddings in transformers, explaining how they are combined with token embeddings to encode both the identity and position of tokens in a sequence, which is essential for processing sequences of arbitrary length.\n\nstatic function that maps integer inputs to real-valued vectors in a way that better\nhandles sequences of arbitrary length. A combination of sine and cosine functions\nwith differing frequencies was used in the original transformer work. Sinusoidal po-\nsition embeddings may also help in capturing the inherent relationships among the",
+        "page": 1,
+        "similarity": 0.5847735801324679
+      }
+    ]
+  },
+  {
+    "question": "How many transformer blocks are typically in a transformer architecture?",
+    "ground_truth": "A transformer architecture typically has anywhere from 12 to 96 or more stacked blocks.",
+    "contextual_answer": "The context does not specify the typical number of transformer blocks in a transformer architecture. Therefore, I cannot answer the question based on the provided context.",
+    "retrieved_chunks": [
+      {
+        "text": "This chunk from Chapter 8 discusses the structure and function of transformer blocks within the transformer architecture, highlighting the role of the residual stream, multi-head attention, and feedforward layers in processing input tokens for language modeling.\n\nweighted by how relevant they are for the processing of the current word.\n• A transformer block consists of a residual stream in which the input from\nthe prior layer is passed up to the next layer, with the output of different com-\nponents added to it. These components include a multi-head attention layer\nfollowed by a feedforward layer, each preceded by layer normalizations.\nTransformer blocks are stacked to make deeper and more powerful networks.",
+        "page": 9,
+        "similarity": 0.5560747626379845
+      },
+      {
+        "text": "This chunk from Chapter 8 discusses the architecture of transformers, specifically focusing on the components of a transformer block, including self-attention, feedforward layers, residual connections, and normalization layers, which collectively enable the model to process and generate language effectively.\n\nattention vector ai with the correct output shape [1×d] at each input i.\n8.2\nTransformer Blocks\nThe self-attention calculation lies at the core of what’s called a transformer block,\nwhich, in addition to the self-attention layer, includes three other kinds of layers: (1)\na feedforward layer, (2) residual connections, and (3) normalizing layers (colloqui-\nally called “layer norm”).\nFig. 8.7 illustrates a transformer block, sketching a common way of thinking",
+        "page": 13,
+        "similarity": 0.5426470029820781
+      },
+      {
+        "text": "This chunk from Chapter 8 discusses the architecture of a transformer block, highlighting the residual stream through which information flows and the role of the multi-head attention module in integrating information from other token positions.\n\nusually of the same size. then projected d, thus producing an output of the same size as the input.\nxi\nhi-1\nxi-1\nhi\n…\nLayer Norm\n+\nLayer Norm\nMultiHead\nAttention\nFeedforward\n+\nxi-2\nhi-2\nFigure 8.7\nThe architecture of a transformer block showing the residual stream, showing\nhow most information ﬂows up through the residual stream, and only the attention module\nis sensitive to information from other streams at prior token positions. In this ﬁgure and",
+        "page": 7,
+        "similarity": 0.5263703044754328
+      }
+    ]
+  },
+  {
+    "question": "What type of language models are transformers typically used for?",
+    "ground_truth": "Transformers are typically used for left-to-right (sometimes called causal or autoregressive) language modeling.",
+    "contextual_answer": "Transformers are typically used for building large language models, particularly for tasks in speech and language processing.",
+    "retrieved_chunks": [
+      {
+        "text": "This chunk from Chapter 8 discusses the architecture and functioning of transformer-based language models, focusing on the components such as multi-head attention, embeddings, and the process of generating output probabilities for predicting the next tokens in a sequence. It also highlights the efficiency improvements and the wide context window that transformers utilize for language modeling.\n\nthrough a softmax to generate word probabilities.\n• Transformer-based language models have a wide context window (200K to-\nkens or even more for very large models with special mechanisms) allowing\nthem to draw on enormous amounts of context to predict upcoming words.\n• There are various computational tricks for making large language models\nmore efﬁcient, such as the KV cache and parameter-efﬁcient ﬁnetuning.\nHistorical Notes",
+        "page": 24,
+        "similarity": 0.5863095665569164
+      },
+      {
+        "text": "This chunk from Chapter 8 discusses the transformer architecture, which is the foundational model for large language processing tasks, emphasizing its components such as embeddings, multi-head attention, and the overall structure of the transformer decoder used for autoregressive language modeling.\n\nSpeech and Language Processing.\nDaniel Jurafsky & James H. Martin.\nCopyright © 2026.\nAll\nrights reserved.\nDraft of January 6, 2026.\nCHAPTER\n8\nTransformers\n“The true art of memory is the art of attention ”\nSamuel Johnson, Idler #74, September 1759\nIn this chapter we introduce the transformer, the standard architecture for build-\ning large language models. As we discussed in the prior chapter, transformer-based\nlarge language models have completely changed the ﬁeld of speech and language",
+        "page": 2,
+        "similarity": 0.5776744126791308
+      },
+      {
+        "text": "This chunk from Chapter 8 discusses the architecture and functioning of transformers, particularly focusing on the components involved in language modeling, such as embeddings, multi-head attention, and the processing of input tokens through transformer blocks. It also highlights the significance of attention mechanisms in building contextual representations of tokens.\n\nHistorical Notes\n27\nBa, J. L., J. R. Kiros, and G. E. Hinton. 2016. Layer normal-\nization. NeurIPS workshop.\nBahdanau, D., K. H. Cho, and Y. Bengio. 2015. Neural ma-\nchine translation by jointly learning to align and translate.\nICLR 2015.\nBrown, T., B. Mann, N. Ryder, M. Subbiah, J. Kaplan,\nP. Dhariwal, A. Neelakantan, P. Shyam, G. Sastry,\nA. Askell, S. Agarwal, A. Herbert-Voss, G. Krueger,\nT. Henighan, R. Child, A. Ramesh, D. M. Ziegler, J. Wu,",
+        "page": 24,
+        "similarity": 0.5775976454342504
+      }
+    ]
+  },
+  {
+    "question": "What does the transformer's embedding matrix E do?",
+    "ground_truth": "The transformer's embedding matrix E is a linear layer that maps a token id to a vector embedding representing that token.",
+    "contextual_answer": "The transformer's embedding matrix E maps token IDs to vector embeddings that represent each token in the vocabulary. It serves as a linear layer that provides the initial representation for input tokens in language modeling.",
+    "retrieved_chunks": [
+      {
+        "text": "This chunk from Chapter 8 discusses the role of the embedding matrix E in the transformer architecture, explaining how it maps token IDs to vector embeddings that represent each token in the vocabulary, which is essential for processing input tokens in language modeling.\n\nthat E is a linear layer that maps a token id to a vector embedding representing that\ntoken. Each token in the vocabulary has an initial embedding representation in E.",
+        "page": 5,
+        "similarity": 0.6235818082375891
+      },
+      {
+        "text": "This chunk from Chapter 8 discusses the architecture of transformers, specifically focusing on the process of embedding input tokens and their positional information, which are essential for building contextual representations in language modeling.\n\nthe context length in tokens), the matrix X of shape [N × d] has an embedding for\nembedding\neach word in the context. The transformer does this by separately computing two\nembeddings: an input token embedding, and an input positional embedding.\nA token embedding, introduced in Chapter 6, is a vector of dimension d that will\nbe our initial representation for the input token. (As we pass vectors up through the\ntransformer layers in the residual stream, this embedding representation will change",
+        "page": 10,
+        "similarity": 0.5420930636148376
+      },
+      {
+        "text": "This chunk from Chapter 8 discusses the transformer architecture's mechanism for processing input tokens through embedding, positional encoding, and the multi-head attention layer, ultimately leading to the generation of output probabilities over the vocabulary. It also highlights the role of the unembedding layer in mapping the final output back to the token space.\n\nover the vocabulary (shape [1×|V|]). In the learning process, E will be optimized to\nbe good at doing both of these mappings. We therefore sometimes call the transpose\nET the unembedding layer because it is performing this reverse mapping.\nunembedding",
+        "page": 19,
+        "similarity": 0.540846122345703
+      }
+    ]
+  },
+  {
+    "question": "What does the transformer's unembedding matrix U do?",
+    "ground_truth": "The transformer's unembedding matrix U is used to convert the output embedding produced by the final transformer block into a form that can be passed through a softmax to generate a distribution over possible next tokens.",
+    "contextual_answer": "The transformer's unembedding matrix U performs a reverse mapping from the output embeddings produced by the final transformer block back to the token space. It is used to generate output probabilities over the vocabulary by passing the output embedding through this linear unembedding matrix and then applying a softmax function. This process is part of the language modeling head in the transformer architecture.",
+    "retrieved_chunks": [
+      {
+        "text": "This chunk from Chapter 8 discusses the transformer architecture's mechanism for processing input tokens through embedding, positional encoding, and the multi-head attention layer, ultimately leading to the generation of output probabilities over the vocabulary. It also highlights the role of the unembedding layer in mapping the final output back to the token space.\n\nover the vocabulary (shape [1×|V|]). In the learning process, E will be optimized to\nbe good at doing both of these mappings. We therefore sometimes call the transpose\nET the unembedding layer because it is performing this reverse mapping.\nunembedding",
+        "page": 19,
+        "similarity": 0.5149469903321229
+      },
+      {
+        "text": "This chunk from Chapter 8 discusses the role of the embedding matrix E in the transformer architecture, explaining how it maps token IDs to vector embeddings that represent each token in the vocabulary, which is essential for processing input tokens in language modeling.\n\nthat E is a linear layer that maps a token id to a vector embedding representing that\ntoken. Each token in the vocabulary has an initial embedding representation in E.",
+        "page": 5,
+        "similarity": 0.5104754903720761
+      },
+      {
+        "text": "This chunk from Chapter 8 discusses the architecture of transformers, specifically focusing on the process of embedding input tokens, the role of multi-head attention in contextualizing token representations, and the final steps of generating output probabilities for language modeling through unembedding and softmax layers.\n\nwith information from another token position.\nAfter the N transformer blocks we take the output embedding that is produced\nby the ﬁnal transformer block, pass it through an linear unembedding matrix U\nand then a softmax over the vocabulary to generate a distribution over possible next\ntokens. These last two components (the unembedding matrix and the softmax) are\nsometimes called the language modeling head. In the rest of this chatper we’ll",
+        "page": 2,
+        "similarity": 0.5087721351845684
+      }
+    ]
+  },
+  {
+    "question": "What concept distinguishes transformers from feedforward layers?",
+    "ground_truth": "The concept that distinguishes transformers from feedforward layers is the multi-head attention layer, or self-attention.",
+    "contextual_answer": "The concept that distinguishes transformers from feedforward layers is the inclusion of multi-head attention mechanisms and the use of a residual stream. While feedforward layers are fully-connected networks that process token embeddings, transformers utilize a combination of multi-head attention and feedforward layers, along with layer normalization and residual connections, to enhance the processing of input tokens in a more complex and context-aware manner.",
+    "retrieved_chunks": [
+      {
+        "text": "This chunk from Chapter 8 discusses the architecture of the transformer model, specifically focusing on the feedforward layer, which is a fully-connected 2-layer network that processes token embeddings and enhances their representations as they pass through the transformer blocks. It also highlights the dimensionality differences between the model and the hidden layer in the feedforward network.\n\n10\nCHAPTER 8\n•\nTRANSFORMERS\nposition i.\nFeedforward layer\nThe feedforward layer is a fully-connected 2-layer network,\ni.e., one hidden layer, two weight matrices, as introduced in Chapter 6. The weights\nare the same for each token position i, but are different from layer to layer. It is com-\nmon to make the dimensionality dff of the hidden layer of the feedforward network\nbe larger than the model dimensionality d. (For example in the original transformer\nmodel, d = 512 and dff = 2048.)",
+        "page": 4,
+        "similarity": 0.6307032715210482
+      },
+      {
+        "text": "This chunk from Chapter 8 discusses the structure and function of transformer blocks within the transformer architecture, highlighting the role of the residual stream, multi-head attention, and feedforward layers in processing input tokens for language modeling.\n\nweighted by how relevant they are for the processing of the current word.\n• A transformer block consists of a residual stream in which the input from\nthe prior layer is passed up to the next layer, with the output of different com-\nponents added to it. These components include a multi-head attention layer\nfollowed by a feedforward layer, each preceded by layer normalizations.\nTransformer blocks are stacked to make deeper and more powerful networks.",
+        "page": 9,
+        "similarity": 0.5734100303663816
+      },
+      {
+        "text": "This chunk from Chapter 8 discusses the architecture of transformers, specifically focusing on the flow of information through the layers, the role of embeddings and positional encodings, and the use of prenorm layer normalization before the attention and feedforward layers.\n\nthroughout the chapter, we use the prenorm version of the architecture, in which the layer\nnorms happen before the attention and feedforward layers rather than after. The ﬁrst\nfeedforward layer, and the output of those is added back into the residual, and we’ll\nuse hi to refer to the resulting output of the transformer block for token i.\nWe’ve already seen the attention layer, so let’s now introduce the feedforward",
+        "page": 2,
+        "similarity": 0.5716834718271558
+      }
+    ]
+  }
+]
